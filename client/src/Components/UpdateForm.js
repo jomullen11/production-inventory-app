@@ -17,7 +17,7 @@ class UpdateForm extends Component {
   
   handleSubmit = async (event, resolve) => {
     event.preventDefault();
-    await fetch(`${'/api' + this.state.activeRoute}`, {
+    await fetch(`${'/api' + this.props.activeRoute}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(this.state)
@@ -35,13 +35,12 @@ class UpdateForm extends Component {
   
   render() {
     const redirect = this.state.redirect;
-    console.log(this.state.activeRoute)
     return (
       <Fragment>
         {redirect ? (
           <Redirect
             to={{
-              pathname: `/refresh${this.state.activeRoute}`,
+              pathname: `/refresh${this.props.activeRoute}`,
               state: { from: this.props.location }
             }}
           />
