@@ -1,0 +1,240 @@
+/* Page or All css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html body{
+  height: 100%;
+  background-color: #73A3FB;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1{
+  margin-top: 8%;
+  margin-bottom: 3%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+h3{
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+/* NavBar Css */
+
+.hubLink{
+  background-color: #FFFB1F;
+  text-align: center;
+  font-size: 1.15vw;
+  border: 1px solid black;
+  /* padding: 1vw 1.99vw 1vw 1.99vw; */
+
+}
+.surv-link{
+  background-color: #FFFB1F;
+  text-align: center;
+  font-size: 1.15vw;
+  border: 1px solid black;
+  /* padding: 1vw 1.99vw 1vw 1.99vw; */
+}
+.kitc-link{
+  background-color: #FFFB1F;
+  text-align: center;
+  font-size: 1.15vw;
+  border: 1px solid black;
+  /* padding: 1vw 1.99vw 1vw 1.99vw; */
+
+}
+.home-link{
+  background-color: #FFFB1F;
+  text-align: center;
+  font-size: 1.15vw;
+  border: 1px solid black;
+  /* padding: 1vw 1.99vw 1vw 1.99vw; */
+
+}
+.fest-link{
+  background-color: #FFFB1F;
+  text-align: center;
+  font-size: 1.15vw;
+  border: 1px solid black;
+  /* padding: 1vw 1.99vw 1vw 1.99vw; */
+
+}
+
+/* Slideout Menu */
+@import url(https://fonts.googleapis.com/css?family=Poiret+One|Varela+Round);
+
+.toggle {
+font-size: 2em;
+color: rgba(0, 0, 0, 0.61);
+-webkit-transition: all 0.15s ease-out 0;
+-moz-transition: all 0.15s ease-out 0;
+transition: all 0.45s ease-out 0;
+position: fixed;
+top: 20px;
+left: 20px;
+z-index: 1;
+cursor: pointer;
+}
+
+.sidebar {
+position: fixed;
+top: 0px;
+bottom: 0px;
+left: -190px;
+-webkit-transition: all 3s ease-out 0;
+-moz-transition: all 3s ease-out 0;
+transition: all 3s ease-out 0;
+width: 8rem;
+padding-right: 1.5em;
+background: #00a2b0; 
+}
+
+.sidebar ul {
+list-style: none;
+margin: 0;
+padding: 0; 
+}
+
+.sidebar li a {
+display: flex;
+justify-content: stretch;
+color: black;
+font-family: 'Poiret One', cursive;
+font-size: 1.2em;
+cursor: pointer;
+text-decoration: none;
+line-height: 229%;
+}
+
+.sidebar a:hover {
+  color: rgba(0, 0, 0, 0.61); 
+}
+
+#slide:checked + .container .sidebar {
+left: 0px;
+ }
+
+#slide:checked + .container .toggle {
+left: 200px;
+ }
+
+
+#slide {
+display: none; 
+}
+
+/* Create New Modal */
+.openModal{
+  margin: 5% auto;
+  padding: auto;
+  width: 10vw;
+  height: 10vw;
+  display: flex;
+  align-content: center;
+}
+
+.openModalText{
+  font-size: 5vw;
+  height: 6vw;
+  width: 8.4vw;
+  /* text-align: center;
+  padding-left: 27.5%; */
+}
+
+.addNew{
+  display: block;
+}
+
+.Modaltoggle {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+/* //Style toggle */
+.toggleLabel {
+  font-size: 16px;
+  background: #fff;
+  padding: 1em;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 1em;
+  box-shadow: 0 1px 2px 0 rgba(153, 153, 153, 0.35);
+  border-radius: 4px;
+}
+
+.modalLabel:after {
+  color: #ED3E44;
+  float: right;
+  font-weight: bold;
+}
+
+/* //Style content */
+.toggleContent {
+  color: #B0B3C2;
+  font-family: monospace;
+  font-size: 16px;
+  margin-bottom: 1.5em;
+  padding: 1em;
+}
+
+.toggleInput {
+  display: none; 
+}
+
+.toggleInput:not(checked) ~ .toggleContent {
+  display: none; 
+}
+
+/* //Display content when checkbox is "checked" */
+.toggleInput:checked ~ .toggleContent {
+    display: block;
+  }
+
+/* Rendering Items on each page */
+.readForm{
+  border: 1px solid black;
+  background-image: linear-gradient(#FFFB1F, #FEFB78, #FFFB1F);
+}
+
+.readItemsH1{
+  text-align: left;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+
+fieldset, ul{
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+
+/* Home Page */
+
+.home-page-button{
+  /* background-color: #FFFB1F; */
+  background-image: linear-gradient(#FFFB1F, rgb(255, 253, 148), #FFFB1F);
+  height: 15vw;
+  width: 98%;
+  text-align: center;
+  font-size: 5vw;
+  border: 1px solid black;
+  margin: 0 1vw 0 1vw;
+}
+
+/* Festival Page */
+.redux-add-item .redux-items .redux-buttons{
+  display: flex;
+  align-self: center;
+}
