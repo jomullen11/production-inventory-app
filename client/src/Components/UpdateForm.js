@@ -14,25 +14,25 @@ class UpdateForm extends Component {
     from: this.props.location
   };
 
-  
-  handleSubmit = async (event, resolve) => {
+
+  handleSubmit = async (event) => {
     event.preventDefault();
-    await fetch(`${'/api' + this.props.activeRoute}`, {
+    await fetch(`${'/api' + this.props.activeRoute + '/' + this.props.read._id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(this.state)
     })
-    .then(sleep(100))
+    .then(() => sleep(100))
     .then(() => this.setState({ redirect: !this.state.redirect }))
     .catch(err => console.log(err));
   };
-  
+
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
-  
+
   render() {
     const redirect = this.state.redirect;
     return (
