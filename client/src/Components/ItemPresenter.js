@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { API_URL  } from '../Navigation/Config'
 import UpdateForm from './UpdateForm'
 
 class ItemPresenter extends Component {
@@ -11,7 +10,7 @@ class ItemPresenter extends Component {
     }
 
     handleDelete = async () => {
-        await fetch(`${API_URL + '/api' + this.state.activeRoute + '/' + this.props.read._id }`, {
+        await fetch(`${'/api' + this.state.activeRoute + '/' + this.props.read._id }`, {
             method: 'DELETE',
         })
         .then(() => this.setState({redirect: !this.state.redirect}))

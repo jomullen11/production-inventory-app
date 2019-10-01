@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import { API_URL } from "../Navigation/Config";
 import { Redirect } from "react-router-dom";
 import sleep from "sleep-promise";
 
@@ -17,18 +16,11 @@ class UpdateForm extends Component {
 
   handleSubmit = async (event, resolve) => {
     event.preventDefault();
-    await fetch(
-      `${API_URL +
-        "/api" +
-        this.state.activeRoute +
-        "/" +
-        this.props.read._id}`,
-      {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(this.state)
-      }
-    )
+    await fetch(`${'/api' + this.props.location.pathname}`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(this.state)
+    })
       .then(sleep(100))
       .then(() => this.setState({ redirect: !this.state.redirect }))
       .catch(err => console.log(err));

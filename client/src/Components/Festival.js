@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import ItemPresenter from "./ItemPresenter";
-import { API_URL } from "../Navigation/Config";
 
 export default class Festival extends Component {
   constructor(props, context) {
@@ -40,7 +39,7 @@ export default class Festival extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    await fetch(`${API_URL + '/api' + this.props.location.pathname}`, {
+    await fetch(`${'/api' + this.props.location.pathname}`, {
       method: "POST",
       body: JSON.stringify(this.state),
       headers: { "content-type": "application/json" }
@@ -74,7 +73,7 @@ export default class Festival extends Component {
   };
 
   getRead = async () => {
-    fetch(`${API_URL + '/api' + this.props.location.pathname}`)
+    fetch(`${'/api' + this.props.location.pathname}`)
       .then(res => res.json())
       .then(data =>
         data.map(element => (
