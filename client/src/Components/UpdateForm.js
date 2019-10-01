@@ -14,26 +14,28 @@ class UpdateForm extends Component {
     from: this.props.location
   };
 
+  
   handleSubmit = async (event, resolve) => {
     event.preventDefault();
-    await fetch(`${'/api' + this.props.location.pathname}`, {
+    await fetch(`${'/api' + this.state.activeRoute}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(this.state)
     })
-      .then(sleep(100))
-      .then(() => this.setState({ redirect: !this.state.redirect }))
-      .catch(err => console.log(err));
+    .then(sleep(100))
+    .then(() => this.setState({ redirect: !this.state.redirect }))
+    .catch(err => console.log(err));
   };
-
+  
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
-
+  
   render() {
     const redirect = this.state.redirect;
+    console.log(this.state.activeRoute)
     return (
       <Fragment>
         {redirect ? (

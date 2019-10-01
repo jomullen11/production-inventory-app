@@ -6,11 +6,10 @@ class ItemPresenter extends Component {
     state = {
         isUpdating: false,
         redirect: false,
-        activeRoute: this.props.activeRoute,
     }
 
     handleDelete = async () => {
-        await fetch(`${'/api' + this.state.activeRoute + '/' + this.props.read._id }`, {
+        await fetch(`${'/api' + this.props.activeRoute + '/' + this.props.read._id }`, {
             method: 'DELETE',
         })
         .then(() => this.setState({redirect: !this.state.redirect}))
@@ -23,7 +22,7 @@ class ItemPresenter extends Component {
 
     updateForm = () => (
         <div>
-            <UpdateForm read={this.props.read} closeUpdate={this.toggleUpdate} activeRoute={this.state.activeRoute}/>
+            <UpdateForm read={this.props.read} closeUpdate={this.toggleUpdate} activeRoute={this.props.activeRoute}/>
             <input type='button' value="Cancel" onClick={this.toggleUpdate} />
         </div>
     )
@@ -40,7 +39,7 @@ class ItemPresenter extends Component {
         const redirect = this.state.redirect
         return(
             <div>
-            { redirect? <Redirect to={{pathname: `/refresh${this.state.activeRoute}`, state: {from: this.props.location}}} /> :
+            { redirect? <Redirect to={{pathname: `/refresh${this.props.activeRoute}`, state: {from: this.props.location}}} /> :
             <div className="readForm container">
                 <ul>
                     <h1 className='readItemsH1'>{inventoryItems.name}</h1>
